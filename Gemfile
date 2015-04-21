@@ -27,10 +27,17 @@ gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0',          group: :doc
 
-group :development do
+group :development, :test  do
   gem 'better_errors', '~> 2.0.0'
   gem 'binding_of_caller', '~> 0.7.2'
   gem 'spring'
+
+  gem 'rspec-rails', '~> 3.1.0'
+  gem 'pry-rails', '~> 0.3.2'
+  gem 'pry-byebug', '~> 2.0.0'
+  gem 'guard-rspec', '~> 4.3.1'
+  gem 'spring-commands-rspec'
+  gem 'factory_girl_rails','~> 4.5.0'
 end
 
 # Use ActiveModel has_secure_password
