@@ -24,4 +24,16 @@ describe Player, type: :model do
       expect(player.matches.count).to eq 2
     end
   end
+
+  describe '#tournaments' do
+    it 'should return all the unique tournaments a player has been in' do
+      t1 = create :tournament
+      t2 = create :tournament
+      create :match, winner: player, tournament: t1
+      create :match, loser: player, tournament: t2
+      create :match, loser: player, tournament: t2
+      expect(player.tournaments.count).to eq 2
+      expect(player.tournaments.first).to be_a Tournament
+    end
+  end
 end

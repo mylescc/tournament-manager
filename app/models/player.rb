@@ -5,4 +5,9 @@ class Player < ActiveRecord::Base
   def matches
     wins + loses
   end
+
+  def tournaments 
+    matches.map{ |m| m.tournament }.uniq
+  end
+
 end
