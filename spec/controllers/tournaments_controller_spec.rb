@@ -9,23 +9,11 @@ RSpec.describe TournamentsController, :type => :controller do
     end
   end
 
-  describe "GET new" do
-    it "returns http success" do
-      get :new
-      expect(response).to have_http_status(:success)
-    end
-  end
-
   describe "GET show" do
-    it "returns http success" do
-      get :show
-      expect(response).to have_http_status(:success)
-    end
-  end
+    let(:tourny) { create :tournament }
 
-  describe "GET destroy" do
     it "returns http success" do
-      get :destroy
+      get :show, { id: tourny.id }
       expect(response).to have_http_status(:success)
     end
   end
