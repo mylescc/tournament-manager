@@ -7,7 +7,7 @@ gem 'pg'
 gem 'activerecord-postgis-adapter', '~> 2.2.1'
 
 # Stylesheets
-gem 'sass-rails', '~> 4.0.3'
+gem 'sass-rails', '~> 5.0.3'
 gem 'foundation-rails', '5.5.1.2'
 
 
