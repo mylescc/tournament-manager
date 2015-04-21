@@ -1,7 +1,7 @@
 require 'rails_helper'
 
-describe TournamentsController, :type => :controller do
-    let(:tournament) { create :tournament }
+describe PlayersController, :type => :controller do
+  let(:player) { create :player }
 
   describe "GET index" do
     it "returns http success" do
@@ -11,9 +11,8 @@ describe TournamentsController, :type => :controller do
   end
 
   describe "GET show" do
-
     it "returns http success" do
-      get :show, { id: tournament.id }
+      get :show, { id: player.id }
       expect(response).to have_http_status(:success)
     end
   end

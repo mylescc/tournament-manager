@@ -6,11 +6,10 @@
 </ul>
 
 <section class="top-bar-section">
-  <ul class="right">
-    <li><%= link_to 'Tournaments', tournaments_path %></li>
-    <li><%= link_to 'Players', '' %></li>
-    <li><%= link_to 'Matches', '' %></li>
+  <ul class="left">
+    <li class="<%= 'active' if params[:controller] == 'tournaments' %>"><%= link_to 'Tournaments', tournaments_path %></li>
+    <li class="<%= 'active' if params[:controller] == 'players' %>"><%= link_to 'Players', players_path %></li>
+    <li class="<%= 'active' if params[:controller] == 'matches' %>"><%= link_to 'Matches', '' %></li>
   </ul>
-
 </section>
 </nav>

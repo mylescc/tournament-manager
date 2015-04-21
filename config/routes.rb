@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
   root 'homepage#index'
 
-  resources :tournaments
+  resources :tournaments, only: [:index, :show]
+  resources :players, only: [:index, :show]
   #resources :matches
-  #resources :players
 end
