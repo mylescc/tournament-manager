@@ -1,5 +1,16 @@
 require 'rails_helper'
 
-RSpec.describe Match, :type => :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+describe Match, :type => :model do
+  let(:match) { create :match }
+
+  describe '#tournament' do
+    let!(:tournament) { create :tournament }
+    before do
+      match.update_attributes(tournament: tournament)
+    end
+
+    it 'should belong to a tournament' do
+      expect(match.tournament).to eq tournament
+    end
+  end
 end
