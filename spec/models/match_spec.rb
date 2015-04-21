@@ -3,6 +3,20 @@ require 'rails_helper'
 describe Match, :type => :model do
   let(:match) { create :match }
 
+  describe '#winner' do
+    it 'should have a winner which is a Player' do
+      match.update_attributes(winner: create(:player))
+      expect(match.winner).to be_a Player
+    end
+  end
+
+  describe '#loser' do
+    it 'should have a loserwhich is a Player' do
+      match.update_attributes(loser: create(:player))
+      expect(match.loser).to be_a Player
+    end
+  end
+
   describe '#tournament' do
     let!(:tournament) { create :tournament }
     before do
