@@ -19,4 +19,19 @@ describe Tournament, :type => :model do
       expect(tournament.players.count).to eq 2
     end
   end
+
+  describe '#ranked_players' do
+    let(:tom) { create :player }
+    let(:dick) { create :player }
+    let(:harry) { create :player }
+
+    it 'should return an array of players with the player with the most wins at the top, least at bottom' do
+      3.times { create :match, tournament: tournament, winner: tom, loser: dick }
+      2.times { create :match, tournament: tournament, winner: dick, loser: harry }
+      1.times { create :match, tournament: tournament, winner: harry, loser: tom }
+      expect(tournament.ranked_players).to be_a Array
+      expect(tournament.ranked_players.first).to eq tom
+      expect(tournament.ranked_players.last).to eq harry 
+    end
+  end
 end
