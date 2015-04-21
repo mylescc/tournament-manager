@@ -13,4 +13,13 @@ describe Match, :type => :model do
       expect(match.tournament).to eq tournament
     end
   end
+
+  describe '#players' do
+    it 'should return an array of all players' do
+      match.winner = create(:player, name: 'myles')
+      match.loser = create(:player, name: 'freddie')
+      expect(match.players.count).to eq 2
+      expect(match.players.first).to be_a Player
+    end
+  end
 end
