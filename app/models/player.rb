@@ -9,5 +9,4 @@ class Player < ActiveRecord::Base
   def tournaments 
     matches.map{ |m| m.tournament }.uniq
   end
-
 end
