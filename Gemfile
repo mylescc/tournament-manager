@@ -16,6 +16,8 @@ gem 'coffee-rails', '~> 4.0.0'
 gem 'jquery-rails'
 gem 'react-rails', '~> 1.0.0.pre', github: 'reactjs/react-rails'
 
+# Templating
+gem 'haml', '4.0.6'
 
 # gem 'therubyracer',  platforms: :ruby
 
@@ -54,5 +56,6 @@ end
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
+
 
 

@@ -1,0 +1,7 @@
+.ui.grid.page
+  .column
+    %h1 Players
+    %hr
+    %ul
+      - @players.each do |player|
+        %li= player.name

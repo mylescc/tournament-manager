@@ -1,0 +1,38 @@
+.ui.page.grid
+  .column
+    %nav.ui.breadcrumb
+      = link_to 'Tournaments', tournaments_path, class: 'section'
+      %i.right.chevron.icon.divider
+      .active.sction= @tournament.name
+    %h1= @tournament.name
+    .ui.grid
+      .six.wide.column
+        %h3 Matches
+        %hr
+        - if @tournament.matches.empty?
+          %p.center.aligned No Matches Yet
+        - else 
+          %p= "Match Total: #{@tournament.matches.count}"
+      .six.wide.column
+        %h3 Players
+        %hr
+        - if @tournament.players.empty?
+          %p.center.aligned No Players Yet
+        - else
+          %table.ui.table
+            %thead
+              %tr
+                %th Rank
+                %th Name
+                %th W/L
+                %th 
+            - @tournament.ranked_players.each_with_index do |player, index|
+              %tr
+                %td= index + 1
+                %td= player.name
+                %td= "#{player.wins.count}/#{player.loses.count}"
+                %td= link_to 'view', player_path(player)
+          
+
+
+

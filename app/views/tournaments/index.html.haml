@@ -1,0 +1,9 @@
+.ui.page.grid
+  .column
+    %h1 Tournaments
+    %hr
+    .ui.cards
+      - @tournaments.each do |tournament|
+        = render 'card', tournament: tournament
+
+
