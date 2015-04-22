@@ -3,6 +3,15 @@ require 'rails_helper'
 describe Player, type: :model do
   let(:player) { create :player}
 
+  describe '#validation' do
+    it 'should validate presence of firstname and lastname' do
+       p = build :player, firstname: nil, lastname: nil
+       expect(p).not_to be_valid
+       expect(p.errors[:firstname]).not_to be_empty
+       expect(p.errors[:lastname]).not_to be_empty
+    end
+  end
+
   describe '#wins' do
     it 'should have an array of wins' do
       create :match, winner: player
