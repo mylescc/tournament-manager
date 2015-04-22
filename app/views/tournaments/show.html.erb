@@ -1,8 +1,9 @@
 <div class="ui page grid">
 <div class="column">
-  <nav class="breadcrumbs">
-    <%= link_to 'Tournaments', tournaments_path %>
-    <a class="current" href="#"><%= @tournament.name %></a>
+  <nav class="ui breadcrumb">
+    <%= link_to 'Tournaments', tournaments_path, class: 'section' %>
+    <i class="right chevron icon divider"></i>
+    <div class="active section"><%= @tournament.name %></div>
   </nav>
   <h1><%= @tournament.name %></h1>
   <div class="row">
