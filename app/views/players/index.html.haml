@@ -2,6 +2,6 @@
   .column
     %h1 Players
     %hr
-    %ul
+    .ui.four.cards
       - @players.each do |player|
-        %li= player.name
+        = render 'card', player: player

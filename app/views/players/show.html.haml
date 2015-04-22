@@ -1,2 +1,20 @@
-<h1>Players#show</h1>
-<p>Find me in app/views/players/show.html.erb</p>
+.ui.grid.page
+  .column
+    %h1= @player.name
+    %nav.ui.breadcrumb
+      = link_to 'Players', players_path, class: 'section'
+      %i.right.chevron.icon.divider
+      .active.section= @player.name
+    %hr
+    .ui.grid
+      .eight.wide.column
+        %h2 Stats
+        %hr
+        = render 'player_stats', player: @player
+      .eight.wide.column
+        %h2 Matches
+        %hr
+        = render 'player_matches', player: @player
+
+
+    

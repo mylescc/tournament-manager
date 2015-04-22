@@ -1,10 +1,10 @@
 .ui.page.grid
   .column
+    %h1= @tournament.name
     %nav.ui.breadcrumb
       = link_to 'Tournaments', tournaments_path, class: 'section'
       %i.right.chevron.icon.divider
-      .active.sction= @tournament.name
-    %h1= @tournament.name
+      .active.section= @tournament.name
     .ui.grid
       .six.wide.column
         %h3 Matches
