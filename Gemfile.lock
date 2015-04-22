@@ -1,4 +1,12 @@
 GIT
+  remote: git://github.com/doabit/semantic-ui-sass.git
+  revision: ba3acee5bb44f2532436f83e3d7d0cd3152b5fe9
+  branch: v1.0beta
+  specs:
+    semantic-ui-sass (1.8.1.0)
+      sass (~> 3.2)
+
+GIT
   remote: git://github.com/reactjs/react-rails.git
   revision: 0faa0f6f86363493d486fbd9aa2fde3c43966c77
   specs:
@@ -78,9 +86,6 @@ GEM
       railties (>= 3.0.0)
     ffi (1.9.6)
     formatador (0.2.5)
-    foundation-rails (5.5.1.2)
-      railties (>= 3.1.0)
-      sass (>= 3.3.0, < 3.5)
     guard (2.8.0)
       formatador (>= 0.2.4)
       listen (~> 2.7)
@@ -210,7 +215,6 @@ DEPENDENCIES
   binding_of_caller (~> 0.7.2)
   coffee-rails (~> 4.0.0)
   factory_girl_rails (~> 4.5.0)
-  foundation-rails (= 5.5.1.2)
   guard-rspec (~> 4.3.1)
   jbuilder (~> 2.0)
   jquery-rails
@@ -222,6 +226,7 @@ DEPENDENCIES
   rspec-rails (~> 3.1.0)
   sass-rails (~> 5.0.3)
   sdoc (~> 0.4.0)
+  semantic-ui-sass!
   spring
   spring-commands-rspec
   turbolinks

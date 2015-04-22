@@ -1,15 +1,10 @@
-<nav class="top-bar" data-topbar role="navigation">
-<ul class="title-area">
-  <li class="name">
-    <h1><%= link_to 'Tournament Manager', root_path  %></h1>
-  </li>
-</ul>
-
-<section class="top-bar-section">
-  <ul class="left">
-    <li class="<%= 'active' if params[:controller] == 'tournaments' %>"><%= link_to 'Tournaments', tournaments_path %></li>
-    <li class="<%= 'active' if params[:controller] == 'players' %>"><%= link_to 'Players', players_path %></li>
-    <li class="<%= 'active' if params[:controller] == 'matches' %>"><%= link_to 'Matches', '' %></li>
-  </ul>
-</section>
+<nav class="ui fixed menu">
+<div class="ui page grid">
+  <div class="column">
+    <%= link_to 'Tournament Manager', root_path, class: 'item header' %>
+    <%= link_to nav_icon('Tournaments', 'sitemap'), tournaments_path, class: nav_active_item('tournaments') %>
+    <%= link_to nav_icon('Matches', 'trophy'), '', class: nav_active_item('matches') %>
+    <%= link_to nav_icon('Players', 'users'), players_path, class: nav_active_item( 'players')%>
+  </div>
+</div>
 </nav>

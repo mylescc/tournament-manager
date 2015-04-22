@@ -1,2 +1,56 @@
-<h1>The <%= @tournament.name %> Tournament</h1>
-<p>Find me in app/views/tournaments/show.html.erb</p>
+<div class="ui page grid">
+<div class="column">
+  <nav class="breadcrumbs">
+    <%= link_to 'Tournaments', tournaments_path %>
+    <a class="current" href="#"><%= @tournament.name %></a>
+  </nav>
+  <h1><%= @tournament.name %></h1>
+  <div class="row">
+    <div class="small-12 medium-6 columns">
+      <h3>Matches</h3>
+      <hr>
+      <% if @tournament.matches.empty? %>
+        <p class="text-center"> No matches yet</p>
+      <% else %>
+        <% @tournament.matches.each do |match| %>
+          <ul class="pricing-table radius">
+            <li class="title">Match <%= match.id %></li>
+            <li class="price">Winner: <%= match.winner.name %></li>
+            <li class="bullet-item">Loser: <%= match.loser.name %></li>
+            <li class="cta-button"><%= link_to 'View Match', '', class: 'button round' %></li>
+          </ul>
+        <% end %>
+      <% end %>
+
+    </div>
+
+    <div class="small-12 medium-6 columns">
+      <h3>Players</h3>
+      <hr>
+      <% if @tournament.players.empty? %>
+        <p class="text-center"> No players yet</p>
+      <% else %>
+        <table style="with: 100%">
+          <thead>
+            <tr>
+              <th>Rank</th>
+              <th>Name</th>
+              <th>W/L</th>
+              <th></th>
+            </tr>
+
+          </thead>
+          <% @tournament.ranked_players.each_with_index do |player, index| %>
+            <tr>
+              <td><%= index + 1 %></td>
+              <td><%= player.name %></td>
+              <td><%= player.wins.count %>/<%= player.loses.count %></td>
+              <td><%= link_to 'view', player_path(player) %></td>
+            </tr>
+          <% end %>
+        </table>
+      <% end %>
+    </div>
+  </div>
+</div>
+</div>

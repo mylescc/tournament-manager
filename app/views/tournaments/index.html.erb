@@ -1,11 +1,11 @@
-<div class="row">
-<div class="small-12 medium-10 large-8 small-centered column">
+<div class="ui page grid">
+<div class="sixteen wide column">
   <h1>Tournaments</h1>
   <hr>
   
   <ul>
     <% @tournaments.each do |tournament| %>
-      <li><%= tournament.name %></li>
+      <li><%= link_to tournament.name, tournament_path(tournament) %></li>
     <% end %>
   </ul>
 </div>
