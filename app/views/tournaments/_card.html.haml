@@ -1,6 +1,5 @@
-.ui.card
+.card
   .content
     .header= tournament.name
     %p Players: #{tournament.players.count}
   = link_to 'View Tournament', tournament_path(tournament), class: 'ui bottom attached button'
-
