@@ -3,6 +3,10 @@ class Tournament < ActiveRecord::Base
 
   has_many :matches
 
+  def tournament_type
+    self.class.parent.to_s.downcase
+  end
+
   def players
     matches.map{ |m| m.players }.flatten.uniq
   end

@@ -1,0 +1,27 @@
+.ui.grid
+  .eight.wide.column
+    %h3 Matches
+    %hr
+    - if tournament.matches.empty?
+      %p.center.aligned No Matches Yet
+    - else 
+      %p= "Match Total: #{tournament.matches.count}"
+  .eight.wide.column
+    %h3 Players
+    %hr
+    - if tournament.players.empty?
+      %p.center.aligned No Players Yet
+    - else
+      %table.ui.table
+        %thead
+          %tr
+            %th Rank
+            %th Name
+            %th W/L
+            %th 
+        - tournament.ranked_players.each_with_index do |player, index|
+          %tr
+            %td= index + 1
+            %td= player.name
+            %td= "#{player.wins.for(tournament).count}/#{player.loses.for(tournament).count}"
+            %td= link_to 'view', player_path(player)

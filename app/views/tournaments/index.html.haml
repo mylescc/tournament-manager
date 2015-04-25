@@ -3,7 +3,7 @@
     %h1 Tournaments
     %hr
     .ui.cards
-      - @tennis_tournaments.each do |tournament|
-        = render 'common/tennis/tournament_card', tournament: tournament
+      - @tournaments.each do |tournament|
+        = render "common/#{tournament.tournament_type}/tournament_card", tournament: tournament
 
 
