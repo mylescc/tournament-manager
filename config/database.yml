@@ -2,7 +2,7 @@ default: &default
   adapter: postgis
   encoding: unicode
   schema_search_path: "public,postgis"
-  database: cowpercup 
+  database: tournamentmanager
   pool: 5
   host: localhost
   username: postgres
