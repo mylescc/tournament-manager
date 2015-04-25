@@ -4,10 +4,10 @@ describe Match, :type => :model do
   let(:match) { create :match }
 
   describe '#for' do
-    let(:tournament) { create :tournament, matches: [ match ] }
+    let!(:tournament) { create :tournament, matches: [ match ] }
     let!(:match2) { create :match }
     it 'should return only matches for a certain tournament' do
-      expect(Match.all.count).to eq 5
+      expect(Match.all.count).to eq 2
       expect(Match.for(tournament).count).to eq 1
     end
   end
