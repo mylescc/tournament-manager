@@ -1,0 +1,6 @@
+module Tennis
+  class Game < ActiveRecord::Base
+    belongs_to :set
+    belongs_to :player
+  end
+end

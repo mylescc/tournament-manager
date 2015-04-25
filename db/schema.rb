@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150425130746) do
+ActiveRecord::Schema.define(version: 20150425141244) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -37,6 +37,16 @@ ActiveRecord::Schema.define(version: 20150425130746) do
     t.string   "firstname"
     t.string   "lastname"
   end
+
+  create_table "tennis_games", force: true do |t|
+    t.integer  "set_id"
+    t.integer  "player_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "tennis_games", ["player_id"], :name => "index_tennis_games_on_player_id"
+  add_index "tennis_games", ["set_id"], :name => "index_tennis_games_on_set_id"
 
   create_table "tennis_scores", force: true do |t|
     t.datetime "created_at"
