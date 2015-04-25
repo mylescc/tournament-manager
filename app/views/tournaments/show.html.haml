@@ -6,14 +6,14 @@
       %i.right.chevron.icon.divider
       .active.section= @tournament.name
     .ui.grid
-      .six.wide.column
+      .eight.wide.column
         %h3 Matches
         %hr
         - if @tournament.matches.empty?
           %p.center.aligned No Matches Yet
         - else 
           %p= "Match Total: #{@tournament.matches.count}"
-      .six.wide.column
+      .eight.wide.column
         %h3 Players
         %hr
         - if @tournament.players.empty?
@@ -30,7 +30,7 @@
               %tr
                 %td= index + 1
                 %td= player.name
-                %td= "#{player.wins.count}/#{player.loses.count}"
+                %td= "#{player.wins.for(@tournament).count}/#{player.loses.for(@tournament).count}"
                 %td= link_to 'view', player_path(player)
           
 

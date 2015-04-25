@@ -6,6 +6,6 @@ class Tournament < ActiveRecord::Base
   end
 
   def ranked_players
-    players.sort! { |left, right| right.wins.count <=> left.wins.count }
+    players.sort! { |left, right| right.wins.for(self).count <=> left.wins.for(self).count }
   end
 end
