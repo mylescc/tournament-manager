@@ -8,6 +8,10 @@ class Match < ActiveRecord::Base
 
   scope :for, -> (tournament) { where(tournament_id: tournament.id) }
 
+  def match_type
+    self.class.parent.to_s.downcase
+  end
+
   def players 
     [ winner, loser ] 
   end

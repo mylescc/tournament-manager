@@ -1,11 +1,18 @@
 require 'rails_helper'
 
 describe Tennis::Match, :type => :model do
-  describe '#validation' do
-    it 'should validate that the score is a tennis score' do
-      t_match = build :tennis_match
-      expect(t_match).not_to be_valid
-      expect(t_match.errors.messages[:score]).not_to be_empty
+  let(:match) { create :tennis_match }
+
+  it 'should attache a tennis score on creation' do
+     m = build :tennis_match
+     expect(m.score).to be_nil
+     m.save!
+     expect(m.score).to be_a Tennis::Score
+  end
+
+  describe '#match_type' do
+    it 'should return tennis' do
+      expect(match.match_type).to eq 'tennis'
     end
   end
 end

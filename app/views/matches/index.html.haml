@@ -2,4 +2,8 @@
   .column
     %h1 Matches
     %hr
+    .ui.cards
+      - @matches.each do |match|
+        = render "common/#{match.match_type}/match_card", match: match
+
 
