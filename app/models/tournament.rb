@@ -1,4 +1,6 @@
 class Tournament < ActiveRecord::Base
+  self.inheritance_column = :type
+
   has_many :matches
 
   def players

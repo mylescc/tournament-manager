@@ -1,6 +1,8 @@
 .ui.page.grid
   .column
-    %h1= @tournament.name
+    %h1.ui.header
+      = @tournament.name
+      .sub.header Tennis
     %nav.ui.breadcrumb
       = link_to 'Tournaments', tournaments_path, class: 'section'
       %i.right.chevron.icon.divider
