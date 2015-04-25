@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe TennisMatch, :type => :model do
+describe Tennis::Match, :type => :model do
   describe '#validation' do
     it 'should validate that the score is a tennis score' do
       t_match = build :tennis_match
