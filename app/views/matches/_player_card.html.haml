@@ -1,0 +1,8 @@
+.ui.fluid.card
+  .image
+    =image_tag 'http://placehold.it/204x169'
+  .content
+    .header= player.name 
+    .meta= match.winner == player ? 'Winner' : 'Loser' 
+    .description
+      =link_to 'View', player_path(player), class: 'ui right floated button blue basic small'

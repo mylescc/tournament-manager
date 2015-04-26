@@ -2,5 +2,11 @@
   .content
     .header= tournament.name
     .meta Tennis
-    .description Players: #{tournament.players.count}
+    .description 
+      .ui.label
+        Players
+        .detail= tournament.players.count
+      .ui.label
+        Matches
+        .detail= tournament.matches.count
   = link_to 'View Tournament', tournament_path(tournament), class: 'ui bottom attached button'

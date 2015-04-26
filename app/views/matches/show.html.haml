@@ -1,16 +1,8 @@
 .ui.page.grid
-  .column.ten.wide
+  .column
     %h1.ui.header 
       #{@match.match_type.capitalize} Match #{@match.id}
       .sub.header= link_to @match.tournament.name, tournament_path(@match.tournament)
-
-  .column.six.wide
-    .ui.center.aligned.segment
-      = @match.winner.name
-      .ui.horizontal.divider
-        VS
-      = @match.loser.name
-  .column.sixteen.wide
     %hr
     .ui.grid
       .column.eight.wide
@@ -34,8 +26,13 @@
               %td= score.games_in_set(4, @match.loser)
               %td= score.games_in_set(5, @match.loser)
               %td= score.games_in_set(6, @match.loser)
-
-
+      .column.eight.wide
+        %h2 Players
+        .ui.grid
+          .column.eight.wide
+            = render 'player_card', player: @match.winner, match: @match
+          .column.eight.wide
+            = render 'player_card', player: @match.loser, match: @match
 
 
 

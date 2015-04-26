@@ -1,5 +1,6 @@
 = link_to player_path(player), class: 'ui card' do
   .image
     = image_tag 'http://placehold.it/204x169'
-  .extra
-    = "#{player.name} (#{player.wins.count}/#{player.loses.count})" 
+  .content
+    .header
+      = player.name 
