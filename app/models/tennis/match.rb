@@ -7,5 +7,6 @@ module Tennis
       self.score ||= Tennis::Score.create!
     end
 
+
   end
 end

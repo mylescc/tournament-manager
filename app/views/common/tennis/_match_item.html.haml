@@ -1,0 +1,28 @@
+.item
+  .content
+    .header Match #{match.id}
+    .meta
+      %span Tennis
+    .description
+      %table.ui.definition.celled.table
+        %tbody
+          - score = match.score
+          %tr
+            %td= match.winner.firstname
+            %td=  score.games_in_set(1, match.winner)
+            %td=  score.games_in_set(2, match.winner)
+            %td=  score.games_in_set(3, match.winner)
+            %td=  score.games_in_set(4, match.winner)
+            %td=  score.games_in_set(5, match.winner)
+            %td=  score.games_in_set(6, match.winner)
+          %tr
+            %td= match.loser.firstname
+            %td=  score.games_in_set(1, match.loser)
+            %td=  score.games_in_set(2, match.loser)
+            %td=  score.games_in_set(3, match.loser)
+            %td=  score.games_in_set(4, match.loser)
+            %td=  score.games_in_set(5, match.loser)
+            %td=  score.games_in_set(6, match.loser)
+    .extra
+      =link_to 'View', match_path(match), class: 'ui right floated button blue basic small'
+      Played on: #{match.created_at}

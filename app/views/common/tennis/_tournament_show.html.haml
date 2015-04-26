@@ -5,7 +5,11 @@
     - if tournament.matches.empty?
       %p.center.aligned No Matches Yet
     - else 
-      %p= "Match Total: #{tournament.matches.count}"
+      .ui.items.divided
+        - tournament.matches.each do |match|
+          = render "common/tennis/match_item", match: match
+      
+       
   .eight.wide.column
     %h3 Players
     %hr
