@@ -1,13 +1,3 @@
 .ui.items.divided
   - player.matches.each do |match|
-    .item
-      .content
-        .header= "Match #{match.id}"
-        .meta
-          %span.winner= match.winner.name
-          %span.vs VS
-          %span.loser= match.loser.name
-        .description
-          Match description
-        .extra
-          =link_to 'View Match', match_path(match), class: 'ui small inverted blue button right floated'
+    = render "common/#{match.match_type}/match_item", match: match

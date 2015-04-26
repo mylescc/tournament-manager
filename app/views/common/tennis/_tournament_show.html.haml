@@ -1,16 +1,5 @@
 .ui.grid
   .eight.wide.column
-    %h3 Matches
-    %hr
-    - if tournament.matches.empty?
-      %p.center.aligned No Matches Yet
-    - else 
-      .ui.items.divided
-        - tournament.matches.each do |match|
-          = render "common/tennis/match_item", match: match
-      
-       
-  .eight.wide.column
     %h3 Players
     %hr
     - if tournament.players.empty?
@@ -29,3 +18,14 @@
             %td= player.name
             %td= "#{player.wins.for(tournament).count}/#{player.loses.for(tournament).count}"
             %td= link_to 'view', player_path(player)
+
+  .eight.wide.column
+    %h3 Matches
+    %hr
+    - if tournament.matches.empty?
+      %p.center.aligned No Matches Yet
+    - else 
+      .ui.items.divided
+        - tournament.matches.each do |match|
+          = render "common/tennis/match_item", match: match
+      
