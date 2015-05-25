@@ -2,6 +2,9 @@ source 'https://rubygems.org'
 
 gem 'rails', '4.1.6'
 
+# Authentication
+gem 'clearance', '1.10.1'
+
 # DB
 gem 'pg'
 gem 'activerecord-postgis-adapter', '~> 2.2.1'
@@ -43,6 +46,7 @@ group :development, :test  do
   gem 'guard-rspec', '~> 4.3.1'
   gem 'spring-commands-rspec'
   gem 'factory_girl_rails','~> 4.5.0'
+  gem 'faker', '1.4.3'
 end
 
 # Use ActiveModel has_secure_password
@@ -60,4 +64,3 @@ end
 
 
 
-gem 'clearance', '1.10.1'
