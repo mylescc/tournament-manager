@@ -4,6 +4,10 @@ Tournament Manager is a work in progress...
 
 ## Todo
 
-- Add User that can login 
-- Add sign up flow
+- Add login and sign up buttons to header
+- make sure sign up flow is working
+- make sure login flow is working 
+- check how clearance reset password emails work
+
+
 
