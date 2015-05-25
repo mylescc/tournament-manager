@@ -1,0 +1,5 @@
+.ui.two.column.centered.grid.page
+  .column
+    = form_for @user, html: {class: 'ui form'} do |form| 
+      = render partial: '/users/form', object: form
+
