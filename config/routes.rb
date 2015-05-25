@@ -4,5 +4,5 @@ Rails.application.routes.draw do
 
   resources :tournaments, only: [:index, :show]
   resources :matches, only: [:index, :show]
-  resources :players, only: [:index, :show]
+  resources :users, only: [:index, :show]
 end

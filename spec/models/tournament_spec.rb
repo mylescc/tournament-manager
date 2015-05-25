@@ -12,8 +12,8 @@ describe Tournament, :type => :model do
 
   describe '#players' do
     it 'should list all unique player via matches' do
-      myles = create :player, name: 'Myles'
-      freddie = create :player, name: 'Freddie'
+      myles = create :user
+      freddie = create :user
       3.times { create :match, tournament: tournament, winner: myles, loser: freddie }
 
       expect(tournament.players.count).to eq 2
@@ -21,9 +21,9 @@ describe Tournament, :type => :model do
   end
 
   describe '#ranked_players' do
-    let(:tom) { create :player }
-    let(:dick) { create :player }
-    let(:harry) { create :player }
+    let(:tom) { create :user}
+    let(:dick) { create :user}
+    let(:harry) { create :user}
 
     it 'should return an array of players with the player with the most wins at the top, least at bottom' do
       3.times { create :match, tournament: tournament, winner: tom, loser: dick }

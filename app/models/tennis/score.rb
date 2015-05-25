@@ -9,8 +9,5 @@ module Tennis
       return 0 unless sets[set_index].present? 
       sets[set_index].games.for(player).count
     end
-
-    #def 
-
   end
 end

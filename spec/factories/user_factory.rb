@@ -1,6 +1,5 @@
 FactoryGirl.define do
-  factory :player do
-    name 'Cowper Trooper'
+  factory :user do
     firstname 'Myles'
     lastname 'Cowper-Coles'
     bio  'A short bio about myself'

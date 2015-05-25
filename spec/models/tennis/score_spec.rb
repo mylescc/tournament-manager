@@ -4,7 +4,7 @@ describe Tennis::Score, :type => :model do
   let(:score) { create :tennis_score }
 
   describe '#games_in_set' do
-    let(:player) { create :player }
+    let(:player) { create :user}
     let(:game1) { create :tennis_game, player: player }
     let(:set) { create :tennis_set, games: [game1] }
 

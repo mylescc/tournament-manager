@@ -1,7 +1,7 @@
 require 'rails_helper'
 
-describe PlayersController, :type => :controller do
-  let(:player) { create :player }
+describe UsersController, :type => :controller do
+  let(:user) { create :user}
 
   describe "GET index" do
     it "returns http success" do
@@ -12,7 +12,7 @@ describe PlayersController, :type => :controller do
 
   describe "GET show" do
     it "returns http success" do
-      get :show, { id: player.id }
+      get :show, { id: user.id }
       expect(response).to have_http_status(:success)
     end
   end

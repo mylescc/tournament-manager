@@ -1,20 +1,20 @@
 .ui.grid.page
   .column
-    %h1= @player.name
+    %h1= @user.name
     %nav.ui.breadcrumb
-      = link_to 'Players', players_path, class: 'section'
+      = link_to 'Players', users_path, class: 'section'
       %i.right.chevron.icon.divider
-      .active.section= @player.name
+      .active.section= @user.name
     %hr
     .ui.grid
       .eight.wide.column
         %h2 Stats
         %hr
-        = render 'player_stats', player: @player
+        = render 'player_stats', player: @user
       .eight.wide.column
         %h2 Matches
         %hr
-        = render 'player_matches', player: @player
+        = render 'player_matches', player: @user
 
 
     

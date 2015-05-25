@@ -13,15 +13,15 @@ describe Match, :type => :model do
 
   describe '#winner' do
     it 'should have a winner which is a Player' do
-      match.update_attributes(winner: create(:player))
-      expect(match.winner).to be_a Player
+      match.update_attributes(winner: create(:user))
+      expect(match.winner).to be_a User 
     end
   end
 
   describe '#loser' do
     it 'should have a loserwhich is a Player' do
-      match.update_attributes(loser: create(:player))
-      expect(match.loser).to be_a Player
+      match.update_attributes(loser: create(:user))
+      expect(match.loser).to be_a User 
     end
   end
 
@@ -38,10 +38,10 @@ describe Match, :type => :model do
 
   describe '#players' do
     it 'should return an array of all players' do
-      match.winner = create(:player, name: 'myles')
-      match.loser = create(:player, name: 'freddie')
+      match.winner = create(:user)
+      match.loser = create(:user)
       expect(match.players.count).to eq 2
-      expect(match.players.first).to be_a Player
+      expect(match.players.first).to be_a User
     end
   end
 end
