@@ -1,8 +1,8 @@
 - if object.errors.any?
   .ui.error.message
-    .header There was an issue siging you up
-    %ul
-    - object.errors.full_messages.each do |msg|
-      %li= msg
+    .header Error 
+    %ul.list
+      - object.errors.full_messages.each do |msg|
+        %li= msg
 
 
