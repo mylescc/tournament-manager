@@ -1,6 +1,6 @@
-= link_to player_path(player), class: 'ui card' do
+= link_to user_path(player), class: 'ui card' do
   .image
     = image_tag 'http://placehold.it/204x169'
   .content
     .header
-      = player.name 
+      = player.fullname

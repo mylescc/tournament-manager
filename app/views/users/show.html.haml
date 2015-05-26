@@ -1,10 +1,10 @@
 .ui.grid.page
   .column
-    %h1= @user.name
+    %h1= @user.fullname
     %nav.ui.breadcrumb
       = link_to 'Players', users_path, class: 'section'
       %i.right.chevron.icon.divider
-      .active.section= @user.name
+      .active.section= @user.fullname
     %hr
     .ui.grid
       .eight.wide.column

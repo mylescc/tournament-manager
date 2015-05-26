@@ -14,4 +14,8 @@ include Clearance::User
   def tournaments 
     matches.map{ |m| m.tournament }.uniq
   end
+
+  def fullname
+    "#{firstname} #{lastname}"
+  end
 end
