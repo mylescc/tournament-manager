@@ -1,0 +1,9 @@
+= form_for :session, url: session_path, html: { class: 'ui form' } do |f|
+  %h3.ui.dividing.header Login
+  %label Email
+  .field
+    = f.email_field :email
+  %label Password
+  .field
+    =f.password_field :password
+  = f.submit 'Login', class: 'ui submit button'

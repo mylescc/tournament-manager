@@ -1,16 +1,16 @@
-
-%h4.ui.dividing.header Sign Up Information
-%label Name
-.two.fields
-  .field
-    = form.text_field :firstname, placeholder: 'First Name'
-  .field
-    = form.text_field :lastname, placeholder: 'Last Name'
-.two.fields
-  .field
-    %label Email
-    = form.email_field :email, placeholder: 'joe@blogs.com'
-  .field
-    %label Password
-    = form.password_field :password
-= form.submit 'Sign Up', class: 'ui submit button'
+= form_for @user, html: {class: 'ui form'} do |form| 
+  %h3.ui.dividing.header Sign Up Information
+  %label Name
+  .two.fields
+    .field
+      = form.text_field :firstname, placeholder: 'First Name'
+    .field
+      = form.text_field :lastname, placeholder: 'Last Name'
+  .two.fields
+    .field
+      %label Email
+      = form.email_field :email, placeholder: 'joe@blogs.com'
+    .field
+      %label Password
+      = form.password_field :password
+  = form.submit 'Sign Up', class: 'ui submit button'
