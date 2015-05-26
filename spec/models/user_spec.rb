@@ -45,4 +45,10 @@ describe User, type: :model do
       expect(user.tournaments.first).to be_a Tournament
     end
   end
+
+  describe '#fullname' do
+    it 'should aggregrate names together' do
+      expect(user.fullname).to eq "#{user.firstname} #{user.lastname}" 
+    end
+  end
 end
