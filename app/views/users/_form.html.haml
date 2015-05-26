@@ -1,5 +1,6 @@
-= form_for @user, html: {class: 'ui form'} do |form| 
+= form_for @user, html: {class: "ui form #{'error' if @user.errors.any?}"} do |form| 
   %h3.ui.dividing.header Sign Up Information
+  = render '/common/errors', object: @user
   %label Name
   .two.fields
     .field

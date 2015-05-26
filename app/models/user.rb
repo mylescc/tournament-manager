@@ -7,6 +7,7 @@ include Clearance::User
   validates :firstname, presence: true
   validates :lastname, presence: true
   
+  
   def matches
     wins + loses
   end
