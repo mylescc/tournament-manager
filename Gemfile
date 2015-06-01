@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'rails', '4.1.6'
+gem 'dotenv-rails', '2.0.1', groups: [:development, :test]
 
 # Authentication
 gem 'clearance', '1.10.1'
@@ -35,9 +36,14 @@ group :production do
   gem 'rails_12factor'
 end
 
-group :development, :test  do
+group :development do
+  gem 'thin', '1.6.3'
+  gem 'quiet_assets', '1.1.0'
   gem 'better_errors', '~> 2.0.0'
   gem 'binding_of_caller', '~> 0.7.2'
+end
+
+group :development, :test  do
   gem 'spring'
 
   gem 'rspec-rails', '~> 3.1.0'
@@ -65,4 +71,5 @@ end
 
 
 
-gem 'dotenv-rails', '2.0.1'
+
+
