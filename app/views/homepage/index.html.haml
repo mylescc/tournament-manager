@@ -1,3 +1,7 @@
-.ui.page.grid
-  .column
-    %h1 Welcome to Tournament Manager 
+- if Rails.env.production?
+  = render 'holding_page'
+- else 
+  = render 'homepage'
+
+
+

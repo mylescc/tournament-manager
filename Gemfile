@@ -64,3 +64,5 @@ end
 
 
 
+
+gem 'dotenv-rails', '2.0.1'
