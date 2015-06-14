@@ -1,7 +1,7 @@
 - if Rails.env.development?
-  .ui.fixed.menu
+  %header.ui.fixed.menu
     .ui.page.grid
-      .column
+      %nav.column
         = link_to 'Tournament Manager', root_path, class: 'item header' 
         = link_to nav_icon('Tournaments', 'sitemap'), tournaments_path, class: nav_active_item('tournaments')
         = link_to nav_icon('Players', 'users'), users_path, class: nav_active_item( 'users')
