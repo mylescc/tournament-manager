@@ -7,6 +7,7 @@ Rails.application.routes.draw do
 
 
   resources :tournaments, only: [:index, :show]
+  resources :ladders
   resources :matches, only: [:index, :show]
   resources :users, only: [:index, :show, :new, :create]
 
