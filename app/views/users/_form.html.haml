@@ -1,17 +1,18 @@
-= form_for @user, html: {class: "ui form #{'error' if @user.errors.any?}"} do |form| 
+= form_for @user, html: {class: "ui form  #{'error' if @user.errors.any?}"} do |f| 
   %h3.ui.dividing.header Sign Up Information
-  = render '/common/errors', object: @user
   %label Name
   .two.fields
     .field
-      = form.text_field :firstname, placeholder: 'First Name'
+      = f.text_field :firstname, placeholder: 'First Name', required: true
     .field
-      = form.text_field :lastname, placeholder: 'Last Name'
+      = f.text_field :lastname, placeholder: 'Last Name', required: true
   .two.fields
     .field
       %label Email
-      = form.email_field :email, placeholder: 'joe@blogs.com'
+      = f.email_field :email, placeholder: 'joe@blogs.com', required: true
     .field
       %label Password
-      = form.password_field :password
-  = form.submit 'Sign Up', class: 'ui submit button'
+      = f.password_field :password, required: true, pattern: '.{6,}', title: 'Password must be 6 characters long'
+  = render '/common/errors', object: @user
+  = f.submit 'Sign Up', class: 'ui submit button primary'
+  %p= link_to 'Already a member?', sign_in_path

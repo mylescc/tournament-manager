@@ -3,6 +3,7 @@ class SessionsController < Clearance::SessionsController
   skip_before_filter :authorize, only: [:create, :new, :destroy]
 
   def new
+    @user = User.new
     render template: "sessions/new"
   end
 
@@ -13,7 +14,7 @@ class SessionsController < Clearance::SessionsController
       if status.success?
         redirect_back_or url_after_create
       else
-        flash.now.notice = status.failure_message
+        @error = status.failure_message
         render template: "sessions/new", status: :unauthorized
       end
     end

@@ -1,9 +1,12 @@
-= form_for :session, url: session_path, html: { class: 'ui form' } do |f|
+= form_for :session, url: session_path, html: { class: "ui form #{'error' if @error.present?}" } do |f|
   %h3.ui.dividing.header Login
   %label Email
   .field
-    = f.email_field :email
+    = f.email_field :email, required: true
   %label Password
   .field
-    =f.password_field :password
-  = f.submit 'Login', class: 'ui submit button'
+    =f.password_field :password, required: true
+  .ui.error.message
+    %p= @error
+  = f.submit 'Login', class: 'ui submit button primary'
+  %p= link_to 'Don\'t have an account?', new_user_path

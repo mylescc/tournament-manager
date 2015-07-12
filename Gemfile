@@ -12,7 +12,7 @@ gem 'activerecord-postgis-adapter', '~> 2.2.1'
 
 # Stylesheets
 gem 'sass-rails', '~> 5.0.3'
-gem 'semantic-ui-sass', github: 'doabit/semantic-ui-sass', branch: 'v1.0beta'
+gem 'semantic-ui-sass', github: 'doabit/semantic-ui-sass', branch: 'master'
 
 # JS
 gem 'uglifier', '>= 1.3.0'
