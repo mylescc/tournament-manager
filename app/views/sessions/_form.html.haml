@@ -1,4 +1,4 @@
-= form_for :session, url: session_path, html: { class: "ui form #{'error' if @error.present?}" } do |f|
+= form_for :session, url: session_path, html: { class: "ui form #{'error' if @error.present?}", autocomplete: 'off' } do |f|
   %h3.ui.dividing.header Login
   %label Email
   .field

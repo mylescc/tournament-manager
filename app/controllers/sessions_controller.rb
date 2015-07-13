@@ -12,7 +12,7 @@ class SessionsController < Clearance::SessionsController
 
     sign_in(@user) do |status|
       if status.success?
-        redirect_back_or url_after_create
+        redirect_back_or user_path(@user)
       else
         @error = status.failure_message
         render template: "sessions/new", status: :unauthorized

@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 
 gem 'rails', '4.1.6'
 gem 'dotenv-rails', '2.0.1', groups: [:development, :test]
+gem 'puma', '2.11.3'
 
 # Authentication
 gem 'clearance', '1.10.1'
@@ -18,19 +19,15 @@ gem 'semantic-ui-sass', github: 'doabit/semantic-ui-sass', branch: 'master'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.0.0'
 gem 'jquery-rails'
-gem 'react-rails', '~> 1.0.0.pre', github: 'reactjs/react-rails'
+gem 'react-rails', '1.0'
 
 # Templating
 gem 'haml', '4.0.6'
 
 # gem 'therubyracer',  platforms: :ruby
 
-# Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
-# Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.0'
-# bundle exec rake doc:rails generates the API under doc/api.
-gem 'sdoc', '~> 0.4.0',          group: :doc
 
 group :production do
   gem 'rails_12factor'
@@ -45,7 +42,6 @@ end
 
 group :development, :test  do
   gem 'spring'
-
   gem 'rspec-rails', '~> 3.1.0'
   gem 'pry-rails', '~> 0.3.2'
   gem 'pry-byebug', '~> 2.0.0'
@@ -53,6 +49,10 @@ group :development, :test  do
   gem 'spring-commands-rspec'
   gem 'factory_girl_rails','~> 4.5.0'
   gem 'faker', '1.4.3'
+end
+
+group :doc do
+  gem 'sdoc', '~> 0.4.0'
 end
 
 # Use ActiveModel has_secure_password
@@ -66,10 +66,4 @@ end
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
-
-
-
-
-
-
 

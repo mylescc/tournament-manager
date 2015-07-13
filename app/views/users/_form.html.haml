@@ -1,4 +1,4 @@
-= form_for @user, html: {class: "ui form  #{'error' if @user.errors.any?}"} do |f| 
+= form_for @user, html: {class: "ui form  #{'error' if @user.errors.any?}", autocomplete: 'off'} do |f| 
   %h3.ui.dividing.header Sign Up Information
   %label Name
   .two.fields
@@ -9,10 +9,10 @@
   .two.fields
     .field
       %label Email
-      = f.email_field :email, placeholder: 'joe@blogs.com', required: true
+      = f.email_field :email, placeholder: 'your@email.com', required: true
     .field
       %label Password
-      = f.password_field :password, required: true, pattern: '.{6,}', title: 'Password must be 6 characters long'
+      = f.password_field :password, placeholder: 'Password', required: true, pattern: '.{6,}', title: 'Password must be 6 characters long'
   = render '/common/errors', object: @user
   = f.submit 'Sign Up', class: 'ui submit button primary'
   %p= link_to 'Already a member?', sign_in_path

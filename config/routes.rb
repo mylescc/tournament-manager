@@ -6,11 +6,10 @@ Rails.application.routes.draw do
   get 'logout', to: 'sessions#destroy'
 
 
-  resources :tournaments, only: [:index, :show]
+  resources :tournaments
   resources :ladders
-  resources :matches, only: [:index, :show]
+  resources :matches
   resources :users, only: [:index, :show, :new, :create]
 
   resource :session, only: [:create]
-
 end
