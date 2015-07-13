@@ -1,0 +1,21 @@
+!!! 5
+%html{ lang: 'en' }
+  %head
+    %meta{ charset: 'utf-8' }
+    %meta{ name: 'viewport', content: 'width=device-width, initial-scale=1.0' }
+    %meta{ name: 'google-site-verification', content: 'tY860YjwVk9XjosfGNWTS4654a94J-b7gzzExponaJA' }
+
+    %title= content_for?(:title) ? yield(:title) : 'Tournament Manager' 
+
+    = stylesheet_link_tag    "application" 
+    = javascript_include_tag "vendor/modernizr" 
+    = javascript_include_tag "application", 'data-turbolinks-track' => true 
+    = csrf_meta_tags 
+  
+  %body
+    = render 'common/nav_bar'
+
+    = yield
+
+    = render 'common/analytics'
+
