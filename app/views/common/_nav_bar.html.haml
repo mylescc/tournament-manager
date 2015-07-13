@@ -1,7 +1,9 @@
 - if Rails.env.development?
-  %header.ui.fixed.menu
+  %h1{ style: 'display: none' } Tournament Manager
+  .ui.fixed.menu
     .ui.page.grid
       %nav.column
+        %h1{ style: 'display: none' }Main Navigation
         = link_to 'Tournament Manager', root_path, class: 'item header' 
         = link_to nav_icon('Tournaments', 'sitemap'), tournaments_path, class: nav_active_item('tournaments')
         = link_to nav_icon('Players', 'users'), users_path, class: nav_active_item( 'users')
@@ -12,5 +14,12 @@
           - else 
             = link_to 'Sign up', sign_up_path, class: 'item'
             = link_to 'Login', sign_in_path, class: 'item'
-
+  .ui.two.column.centered.grid.page
+    .column
+      - flash.each do |key, message|
+        .ui.floating.message{ class: key }
+          %i.close.icon
+          .header= message['header']
+          %p= message['body']
+  
 

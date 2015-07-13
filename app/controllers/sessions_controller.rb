@@ -22,6 +22,7 @@ class SessionsController < Clearance::SessionsController
 
   def destroy
     sign_out
+    flash[:success] = { header: 'Logout successful', body: 'You have been succesfully logged out' }
     redirect_to root_path
   end
 end
