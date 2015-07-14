@@ -1,20 +1,14 @@
 class User < ActiveRecord::Base
-include Clearance::User
-
-  has_many :wins, class_name: Match, foreign_key: :winner_id
-  has_many :loses, class_name: Match, foreign_key: :loser_id
+  include Clearance::User
 
   validates :firstname, presence: true
   validates :lastname, presence: true
-  
-  
-  def matches
-    wins + loses
-  end
 
-  def tournaments 
-    matches.map{ |m| m.tournament }.uniq
-  end
+  has_many :users_wins
+  has_many :wins, through: :users_wins
+
+  has_many :users_loses
+  has_many :loses, through: :users_loses
 
   def fullname
     "#{firstname} #{lastname}"

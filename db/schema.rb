@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150614135709) do
+ActiveRecord::Schema.define(version: 20150714212756) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -31,7 +31,6 @@ ActiveRecord::Schema.define(version: 20150614135709) do
     t.datetime "updated_at"
     t.integer  "winner_id"
     t.integer  "loser_id"
-    t.integer  "tournament_id"
     t.integer  "score_id"
     t.string   "score_type"
     t.string   "type"
@@ -60,15 +59,6 @@ ActiveRecord::Schema.define(version: 20150614135709) do
 
   add_index "tennis_sets", ["score_id"], :name => "index_tennis_sets_on_score_id"
 
-  create_table "tournaments", force: true do |t|
-    t.string   "name"
-    t.datetime "start"
-    t.datetime "finish"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "type"
-  end
-
   create_table "users", force: true do |t|
     t.string   "firstname"
     t.string   "lastname"
@@ -83,5 +73,21 @@ ActiveRecord::Schema.define(version: 20150614135709) do
 
   add_index "users", ["email"], :name => "index_users_on_email"
   add_index "users", ["remember_token"], :name => "index_users_on_remember_token"
+
+  create_table "users_loses", force: true do |t|
+    t.integer "user_id"
+    t.integer "lose_id"
+  end
+
+  add_index "users_loses", ["lose_id"], :name => "index_users_loses_on_lose_id"
+  add_index "users_loses", ["user_id"], :name => "index_users_loses_on_user_id"
+
+  create_table "users_wins", force: true do |t|
+    t.integer "user_id"
+    t.integer "win_id"
+  end
+
+  add_index "users_wins", ["user_id"], :name => "index_users_wins_on_user_id"
+  add_index "users_wins", ["win_id"], :name => "index_users_wins_on_win_id"
 
 end

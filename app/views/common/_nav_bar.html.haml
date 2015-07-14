@@ -5,7 +5,7 @@
       %nav.column
         %h1{ style: 'display: none' }Main Navigation
         = link_to 'Tournament Manager', root_path, class: 'item header' 
-        = link_to nav_icon('Tournaments', 'sitemap'), tournaments_path, class: nav_active_item('tournaments')
+        = #link_to nav_icon('Tournaments', 'sitemap'), tournaments_path, class: nav_active_item('tournaments')
         = link_to nav_icon('Players', 'users'), users_path, class: nav_active_item( 'users')
         .right.menu
           - if signed_in?
